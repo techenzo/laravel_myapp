@@ -8,10 +8,17 @@
                 @foreach($displayallposts as $post)
                         {{-- bootstrap class well adds rounded border with gray background --}}
                         <div class ="well">
-                        {{-- url display the id from table posts and display the title --}}
-                        <h3><a href="/posts/{{$post->id}}">{{$post->title}}</h3>
-                        {{-- display the  column created at from the table posts --}}
-                        <small>Written on {{$post->created_at}} by {{$post->user['name']}}</small>
+                                <div class ="row">
+                                        <div class="col-md-4 col-sm-4">
+                                                <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                                {{-- url display the id from table posts and display the title --}}
+                                                <h3><a href="/posts/{{$post->id}}">{{$post->title}}</h3>
+                                                {{-- display the  column created at from the table posts --}}
+                                                <small>Written on {{$post->created_at}} by {{$post->user['name']}}</small>
+                                        </div>
+                                </div>
                         </div>
                 @endforeach
                
